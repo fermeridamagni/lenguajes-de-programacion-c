@@ -1,16 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int main() {
-  char secreto[20];
+int main()
+{
+  char clave[50], claveGuardada[] = "clavesegura";
 
-  printf("Ingresa la contraseña: ");
-  scanf("%s", secreto);
+  printf("Ingresa la clave: ");
+  scanf("%c", clave);
 
-  if (strcmp(secreto, "password123") == 0) {
-    printf("Contraseña correcta, bienvenido!");
-  } else {
-    printf("Contraseña incorrecta, intenta de nuevo.");
+  if (strcmp(clave, claveGuardada) == 0)
+  {
+    printf("Clave correcta, bienvenido!");
+  }
+  else
+  {
+    printf("Clave incorrecta, intenta de nuevo.");
   }
 
   return 0;

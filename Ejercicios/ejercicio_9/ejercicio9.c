@@ -10,7 +10,7 @@ int main()
 
   if (edad < 10)
   {
-    printf("Eres un niño");
+    printf("Eres un nino");
   }
   else
   {

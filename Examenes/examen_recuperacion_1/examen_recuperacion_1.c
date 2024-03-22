@@ -5,7 +5,7 @@ void menu() {
   printf("\nLista de opciones:\n");
   printf("1. Crear promedio de numeros\n");
   printf("2. Sumar numeros\n");
-  printf("4. Salir\n");
+  printf("3. Salir\n");
 }
 
 void promediar() {
@@ -43,64 +43,65 @@ void sumar() {
 }
 
 int main() {
-  int opcion;
+  int opcion, opcion_operacion;
 
-  menu();
-  scanf("%d", &opcion);
-
-  switch (opcion) {
-  case 1:
-    printf("\nOpcion seleccionada: Crear promedio de numeros\n");
-    printf("1. Ingresar la cantidad de numeros a promediar\n");
-    printf("2. Volver a la lista de opciones\n");
+  do {
+    menu();
     scanf("%d", &opcion);
 
-    if (opcion == 1) {
-      promediar();
+    switch (opcion) {
+    case 1:
+      printf("\nOpcion seleccionada: Crear promedio de numeros\n");
+      printf("1. Ingresar la cantidad de numeros a promediar\n");
+      printf("2. Volver a la lista de opciones\n");
+      scanf("%d", &opcion_operacion);
 
-      menu();
-      scanf("%d", &opcion); 
-    } else if (opcion == 2) {
-      menu();
+      switch (opcion_operacion) {
+        case 1:
+          promediar();
+          break;
+          
+        case 2:
+          menu();
+          scanf("%d", &opcion);
+          break;
+
+        default:
+          printf("Opcion invalida. Ingrese un numero del 1 al 2.\n");
+          break;
+      }
+
+      break;
+    case 2:
+      printf("\nOpcion seleccionada: Sumar numeros\n");
+      printf("1. Ingresar la cantidad de numeros a sumar\n");
+      printf("2. Volver a la lista de opciones\n");
       scanf("%d", &opcion);
-    } else {
-      printf("\nOpcion invalida. Ingrese un numero del 1 al 2.\n\n");
+
+      switch (opcion_operacion) {
+        case 1:
+          sumar();
+          break;
+
+        case 2:
+          menu();
+          scanf("%d", &opcion);
+          break;
+
+        default:
+          printf("Opcion invalida. Ingrese un numero del 1 al 2.\n");
+          break;
+      }
+
+      break;
+    case 3:
+      printf("\nSaliendo del programa...\n");
+      return 0;
+      break;
+    default:
+      printf("Opcion invalida. Ingrese un numero del 1 al 3.\n");
     }
-
-    break;
-
-  case 2:
-    printf("\nOpcion seleccionada: Sumar numeros\n");
-    printf("1. Ingresar la cantidad de numeros a sumar\n");
-    printf("2. Volver a la lista de opciones\n");
-    scanf("%d", &opcion);
-
-    if (opcion == 1) {
-      sumar();
-
-      menu();
-      scanf("%d", &opcion);
-    } else if (opcion == 2) {
-      menu();
-      scanf("%d", &opcion);
-    } else {
-      printf("\nOpcion invalida. Ingrese un numero del 1 al 2.\n\n");
-    }
-
-    break;
-
-  case 4:
-    printf("\nSaliendo del programa...\n");
-
-    return 0;
-
-    break;
-
-  default:
-    printf("\nOpcion invalida. Ingrese un numero del 1 al 3.\n\n");
-
-    break;
-  }
+  } while (opcion != 3);
 
   return 0;
 }

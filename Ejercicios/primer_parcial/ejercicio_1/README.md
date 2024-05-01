@@ -8,7 +8,7 @@
 
 * Impresión de los valores de X, Y y Z
 
-### Pasos:
+#### Pasos:
 
 1. **Inicio:**
    * Mostramos al usuario un mensaje para que ingrese el valor de X.

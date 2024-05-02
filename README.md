@@ -1,1 +1,1 @@
-# Curso de Lenguajes de Programación
+# RECURSOS DE PROGRAMACION EN LENGUAJE C

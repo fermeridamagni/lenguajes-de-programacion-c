@@ -1,2 +1,5 @@
 # Visual Studio Code
 .vscode/
+
+# Carpetas que digan output
+output/
